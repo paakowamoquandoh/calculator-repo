@@ -1,0 +1,38 @@
+.contain{
+	background-color: grey;
+	color: white;
+	border-left: 2px solid #CAC0C0;
+	border-right: 2px solid #CAC0C0;
+	border-bottom: 2px solid #CAC0C0;
+	border-top: 2px solid #CAC0C0;
+}
+
+.row1{
+	background-color: white;
+}
+
+.dives{
+	background-color: orange;
+	border-left: 2px solid #CAC0C0;
+	border-right: 2px solid #CAC0C0;
+	border-bottom: 2px solid #CAC0C0;
+	border-top: 2px solid #CAC0C0;
+	color: white;
+}
+
+.container{
+	border: 3px;
+}
+
+.cols{
+	background-color: #B4AFAF;
+	border-left: 2px solid #CAC0C0;
+	border-right: 2px solid #CAC0C0;
+	border-bottom: 2px solid #CAC0C0;
+	border-top: 2px solid #CAC0C0;
+}
+
+body{
+	font-size: 80px;
+	text-align: center;
+}
