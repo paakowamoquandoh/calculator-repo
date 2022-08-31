@@ -1,98 +1,130 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Simple Calculator</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
-<body>
-	<div class="container contain">
-		<div class="row">
-			<p class="text-right">0</p>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 cols">
-				<p>AC</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>+/-</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>%</p>
-			</div>
-			<div class="col-md-3 dives">
-				<p>/</p>
-			</div>
-		</div>
-	</div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 cols">
-				<p>7</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>8</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>9</p>
-			</div>
-			<div class="col-md-3 dives">
-				<p>x</p>
-			</div>
-		</div>
-	</div>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 cols">
-				<p>4</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>5</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>6</p>
-			</div>
-			<div class="col-md-3 dives">
-				<p>-</p>
-			</div>
-		</div>
-	</div>
+    <title>Frontend Mentor | Calculator app</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 cols">
-				<p>1</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>2</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>3</p>
-			</div>
-			<div class="col-md-3 dives">
-				<p>+</p>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 cols">
-				<p>0</p>
-			</div>
-			<div class="col-md-3 cols">
-				<p>.</p>
-			</div>
-			<div class="col-md-3 dives">
-				<p>=</p>
-			</div>
-		</div>
-	</div>
+  <body>
+    <!--Calc project starts below-->
+    <div class="container calcLayout">
+      <!--header section below-->
+      <section id="header">
+        <nav class="navbar">
+          <a class="navbar-brand">
+            <h1 class="calcLabel">calc</h1>
+          </a>
 
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-</body>
+          <div class="themeGroup w-auto">
+            <div class="radioArea">
+              <span class="calcText">THEME</span>
+              <div id="outerContainer">
+                <div id="buttonContainer">
+                  <div class="redButton"></div>
+                </div>
+
+                <div id="legendTextContainer">
+                  <div class="legendText" onclick="theme1()">1</div>
+                  <div class="legendText" onclick="theme2()">2</div>
+                  <div class="legendText" onclick="theme3()">3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <!--header section ends here-->
+
+      <!--Display area below-->
+      <section id="displayArea">
+        <div class="display">
+          <div class="showOperation"><span id="operationDisplay"></span></div>
+          <div class="numDisplay"><span id="numbersSumDisplay"></span></div>
+        </div>
+      </section>
+      <!--Display area ends here-->
+
+      <!--body below-->
+      <section id="keyArea">
+        <div class="keyBody">
+          <div class="rows">
+            <button id="numBtn" type="button" class="col whiteKeys">7</button>
+            <button id="numBtn" type="button" class="col whiteKeys">8</button>
+            <button id="numBtn" type="button" class="col whiteKeys">9</button>
+
+            <button class="col blueKeys" type="button" id="clearBtn">
+              DEL
+            </button>
+          </div>
+
+          <div class="rows">
+            <button id="numBtn" type="button" class="col whiteKeys">4</button>
+            <button id="numBtn" type="button" class="col whiteKeys">5</button>
+            <button id="numBtn" type="button" class="col whiteKeys">6</button>
+
+            <button class="col whiteKeys" type="button" id="operatorBtn">
+              +
+            </button>
+          </div>
+
+          <div class="rows">
+            <button id="numBtn" type="button" class="col whiteKeys">1</button>
+            <button id="numBtn" type="button" class="col whiteKeys">2</button>
+            <button id="numBtn" type="button" class="col whiteKeys">3</button>
+
+            <button class="col whiteKeys" type="button" id="operatorBtn">
+              -
+            </button>
+          </div>
+          <div class="rows">
+            <button id="numBtn" type="button" class="col whiteKeys">.</button>
+            <button id="numBtn" type="button" class="col whiteKeys">0</button>
+            <button id="operatorBtn" type="button" class="col whiteKeys">
+              /
+            </button>
+
+            <button class="col whiteKeys" type="button" id="operatorBtn">
+              x
+            </button>
+          </div>
+          <div class="rows">
+            <button id="resetBtn" type="button" class="col blueKeys">
+              RESET
+            </button>
+
+            <button type="button" class="col orangeKey" id="equalBtn">=</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--body ends here-->
+
+    <div class="attribution" style="margin-top: 10px; text-align: center">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/felixEKow"><i>theDev_Felix</i></a
+      >.
+    </div>
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
+    ></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+  </body>
 </html>

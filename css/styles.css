@@ -1,38 +1,390 @@
-.contain{
-	background-color: grey;
-	color: white;
-	border-left: 2px solid #CAC0C0;
-	border-right: 2px solid #CAC0C0;
-	border-bottom: 2px solid #CAC0C0;
-	border-top: 2px solid #CAC0C0;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/* Base styles color:  */
+:root{
+  --theme1-main-background: hsl(222, 26%, 31%);
+  --theme1-toggle-background:  hsl(223, 31%, 20%);
+  --theme1-screen-background: hsl(224, 36%, 15%);
+  --theme1-bluekey-background: hsl(225, 21%, 49%);
+  --theme1-bluekey-shadow: hsl(224, 28%, 35%);
+  --theme1-bluekey-hover: rgb(145, 155, 187);
+  --theme1-red-key: hsl(6, 63%, 50%);
+  --theme1-redkey-shadow: hsl(6, 70%, 34%);
+  --theme1-redkey-hover: rgb(213, 92, 79);;
+  --theme1-whitekey: hsl(30, 11%, 82%);
+  --theme1-whitekey-shadow: hsl(28, 16%, 65%);
+  --theme1-whitekey-hover: white;
+  --theme1-number-color: hsl(221, 14%, 31%);
+  --theme1-otherkeys-color: white;
+  --theme1-text-color: white;
+  --calc-font-family: 'League Spartan', sans-serif;
+  --font-size: 2rem;
 }
 
-.row1{
-	background-color: white;
-}
+/* general styles */
 
-.dives{
-	background-color: orange;
-	border-left: 2px solid #CAC0C0;
-	border-right: 2px solid #CAC0C0;
-	border-bottom: 2px solid #CAC0C0;
-	border-top: 2px solid #CAC0C0;
-	color: white;
-}
-
-.container{
-	border: 3px;
-}
-
-.cols{
-	background-color: #B4AFAF;
-	border-left: 2px solid #CAC0C0;
-	border-right: 2px solid #CAC0C0;
-	border-bottom: 2px solid #CAC0C0;
-	border-top: 2px solid #CAC0C0;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body{
-	font-size: 80px;
-	text-align: center;
+  background-color:var(--theme1-main-background);
+  font-family: var(--calc-font-family); 
+}
+
+
+body.theme2{
+  --theme1-main-background: hsl(0, 0%, 90%);
+  --theme1-toggle-background:  hsl(0, 5%, 81%);
+  --theme1-screen-background: hsl(0, 0%, 93%);
+  --theme1-bluekey-background: hsl(185, 42%, 37%);
+  --theme1-bluekey-shadow: hsl(185, 58%, 25%);
+  --theme1-bluekey-hover: hsl(185, 40%, 54%);
+  --theme1-red-key: hsl(25, 98%, 40%);
+  --theme1-redkey-shadow: hsl(25, 99%, 27%);
+  --theme1-redkey-hover: hsl(25, 67%, 54%);
+  --theme1-whitekey: hsl(30, 24%, 93%);
+  --theme1-whitekey-shadow: hsl(28, 16%, 65%);
+  --theme1-whitekey-hover: white;
+  --theme1-number-color: hsl(60, 10%, 19%);
+  --theme1-otherkeys-color: white;
+  --theme1-text-color: hsl(60, 10%, 19%);
+}
+
+body.theme3{
+  --theme1-main-background: hsl(268, 75%, 9%);
+  --theme1-toggle-background:  hsl(268, 71%, 12%);
+  --theme1-screen-background: hsl(268, 71%, 12%);
+  --theme1-bluekey-background: hsl(281, 89%, 26%);
+  --theme1-bluekey-shadow: hsl(285, 91%, 52%);
+  --theme1-bluekey-hover: hsl(285, 80%, 68%);
+  --theme1-red-key: hsl(176, 100%, 44%);
+  --theme1-redkey-shadow: hsl(177, 92%, 70%);
+  --theme1-redkey-hover: hsl(175, 44%, 65%);
+  --theme1-whitekey: hsl(268, 47%, 21%);
+  --theme1-whitekey-shadow: hsl(290, 70%, 36%);
+  --theme1-whitekey-hover: hsl(285, 67%, 48%);
+  --theme1-number-color: hsl(52, 100%, 62%);
+  --theme1-otherkeys-color: white;
+  --theme1-text-color: hsl(52, 100%, 62%);
+}
+
+.calcLayout{
+  width: 540px;
+  padding: 20px;
+  height: 708px;
+  margin-bottom: 200px;
+  
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* header styling */
+#header{  
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.navbar{
+  box-shadow: none;
+  border: none;
+  
+
+}
+.calcHeader{  
+  cursor: pointer;
+  grid-column: 1/-1;
+}
+.calcLabel{
+  color: var(--theme1-text-color);
+  font-size: 2.8rem;
+}
+
+.calcText{
+  color: var(--theme1-text-color);
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+.radioArea{
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.redButton.horizTranslate2 {
+  transition: transform 0.1s linear; 
+  transform: translateX(20px);
+ }
+
+.redButton.horizTranslate3 {
+  transition: transform 0.1s linear; 
+  transform: translateX(40px);
+ }
+.redButton.horizTranslate1 { 
+ transition: transform 0.1s linear; 
+ transform: translateX(0px);
+}
+
+#outerContainer {
+  position: relative;
+  margin-top: -42px;
+}
+
+#buttonContainer {
+  background-color: var(--theme1-toggle-background);
+  width: 71px;
+  height: 28px;
+  position: relative;
+  left: -10px;
+  top: 50px;
+  border-radius: 14px;
+}
+
+.redButton{
+ width:16px; height:16px; 
+ background-color:var(--theme1-red-key); 
+ border-radius:8px; 
+ position:relative; 
+ top:6px; 
+ left:6px;
+}
+
+#legendTextContainer{  
+  position:absolute; 
+  color:#ffffff;
+  font-family:Arial; 
+  font-size:10pt;
+  text-align:center;
+}
+
+.legendText{
+  display:inline-block;
+  width:15px; 
+  padding-bottom:33px; 
+  cursor:default; 
+  user-select: none;
+}
+
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+
+
+
+
+/* display area styling */
+
+.display{
+  margin-bottom: 40px;
+  border-radius: 8px;
+	background-color: var(--theme1-screen-background);
+	color: var(--theme1-text-color);
+	display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  flex-direction: column;	
+	padding: 5px 10px;
+  height: 120px;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-overflow: ellipsis;  
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track { 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--theme1-bluekey-background); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme1-bluekey-background); 
+}
+
+
+.numDisplay{
+	font-size: 3.2rem;
+	font-weight: 400;
+  margin-top: 5px;   
+  margin-bottom: -10px;
+}
+
+.showOperation {
+  font-size: larger;
+  margin-bottom: -15px;
+}
+
+
+/* Keys area styling */
+.keyBody{
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--theme1-toggle-background); 
+}
+
+.rows{
+	font-size: var(--font-size);
+  margin: 25px;
+  gap: 25px;
+	display: flex;
+	flex-direction: row;
+  align-items: center;
+}
+
+.blueKeys{
+  background-color: var(--theme1-bluekey-background);
+  font-weight: bolder;
+  color: var(--theme1-otherkeys-color);
+  border: none;  
+  box-shadow:  0px 3px 0 1px var(--theme1-bluekey-shadow),  -3px 3px 0 5px var(--theme1-toggle-background);
+  
+}
+
+.blueKeys:active {
+  background-color: var(--theme1-bluekey-hover);
+  box-shadow: 0 5px var(--theme1-bluekey-shadow);
+  transform: translateY(4px);
+}
+
+.blueKeys:hover{
+	background: var(--theme1-bluekey-hover);
+  border: none;
+}
+
+.col{
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.orangeKey{
+	background-color: var(--theme1-red-key);
+	color: var(--theme1-otherkeys-color);
+	font-weight: bolder;
+  border: none;
+  box-shadow:  0px 3px 0 1px var(--theme1-redkey-shadow),  -3px 3px 0 5px var(--theme1-toggle-background);
+}
+
+.orangeKey:active {
+  background-color: var(--theme1-redkey-hover);	
+  box-shadow: 0 5px var(--theme1-redkey-shadow);
+  transform: translateY(4px);
+}
+
+.orangeKey:hover{
+	background: var(--theme1-redkey-hover);	
+}
+
+.whiteKeys{
+	background-color: var(--theme1-whitekey);
+	color: var(--theme1-number-color);
+	font-weight: bolder;
+  border: none;
+   box-shadow:  0px 3px 0 1px var(--theme1-whitekey-shadow),  -3px 3px 0 8px var(--theme1-toggle-background);
+}
+
+.whiteKeys:active {
+  background-color: var(--theme1-whitekey-hover);
+  box-shadow: 0 5px var(--theme1-whitekey-shadow);
+  transform: translateY(4px);
+}
+
+.whiteKeys:hover{
+	background: var(--theme1-whitekey-hover);
+}
+
+
+/** media queries for responsive interface **/
+ /** tablet view **/
+ @media (min-device-width: 764px) 
+  and (max-device-width: 990px)
+  and (-webkit-min-device-pixel-ratio: 1){
+  }
+
+   /* Mobile devices view */
+
+   @media only screen 
+   and (min-device-width: 225px) 
+   and (max-device-width: 680px) 
+   and (-webkit-min-device-pixel-ratio: 2){
+    body{
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+   .calcLayout{
+    max-width: 325px;
+    padding: 10px 0px;
+    height: 532px;    
+   }
+
+  #header{  
+    width: 325px;
+    margin: 0px 5px ;
+  }
+
+  .radioArea{
+    margin-top: -8px;
+  }
+
+  .display{   
+    padding: 0px 10px;
+    width: 320px;
+    margin: 5px 3px;
+    height: 80px;
+  }
+
+  .numDisplay{
+    font-size: 2em;
+    padding-bottom: 10px;  
+  }
+
+  #keyArea{
+    height: auto;
+    width: 325px;
+    padding: 5px;
+ }
+
+  .keyBody{    
+    height: auto;
+    padding: 5px;
+ }
+
+ .blueKeys, .orangeKey, .whiteKeys{
+  padding-top: 20px;
+  font-size: 0.8em;
+  
+ }
+
+ .rows{
+  margin: 25px;
+  gap: 25px;	
+}
+
+.col{
+  padding: 0;
+}
+  
 }
